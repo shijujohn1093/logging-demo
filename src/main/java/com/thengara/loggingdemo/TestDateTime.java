@@ -60,5 +60,9 @@ public class TestDateTime {
 
 		//https://stackoverflow.com/questions/34222227/how-to-use-joda-time-with-maven
 		//https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html
+		//https://www.timeanddate.com/time/zone/uk/london
+		// https://www.tecmint.com/check-linux-timezone/
+		//https://www.timeanddate.com/time/zone/uk/london
+		//https://www.timeanddate.com/time/change/uk/london
 	}
 }
