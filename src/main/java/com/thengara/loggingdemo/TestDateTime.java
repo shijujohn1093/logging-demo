@@ -8,6 +8,8 @@ import java.time.ZonedDateTime;
 import java.util.Date;
 import java.util.TimeZone;
 
+import org.joda.time.DateTime;
+
 public class TestDateTime {
 	public static void main(String[] args) {
 //		for(String zone : ZoneId.getAvailableZoneIds()) {
@@ -23,10 +25,10 @@ public class TestDateTime {
 		ZoneId zoneId = ZoneId.systemDefault();
 		System.out.println(zoneId);
 
-		System.out.println("2 --------Date------------------------");
+		System.out.println("2 --------Util Date------------------------");
 		Date utilDate = new Date();
 		System.out.println(utilDate);
-		
+
 		System.out.println("3 --------LocalDate LocalTime ------------------------");
 
 		LocalDate currentDate = LocalDate.now();
@@ -55,14 +57,21 @@ public class TestDateTime {
 		ZonedDateTime gmtZdt = ZonedDateTime.now(gmtZoneId);
 		System.out.println(gmtZdt);
 		/**
-		 * Instance if Java util Date will always create object of time same as system, unless we set default timezon
+		 * Instance if Java util Date will always create object of time same as system,
+		 * unless we set default timezon
 		 */
 
-		//https://stackoverflow.com/questions/34222227/how-to-use-joda-time-with-maven
-		//https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html
-		//https://www.timeanddate.com/time/zone/uk/london
+		System.out.println("6 --------Joda Datetime----------");
+		DateTime jodaDateTime = new DateTime();
+		System.out.println("Joda DateTime =>"+jodaDateTime);
+		Date utilDate2 = new Date(jodaDateTime.getMillis());
+		System.out.println("Util Date from Joda =>"+  utilDate2);
+
+		// https://stackoverflow.com/questions/34222227/how-to-use-joda-time-with-maven
+		// https://www.oracle.com/technical-resources/articles/java/jf14-date-time.html
+		// https://www.timeanddate.com/time/zone/uk/london
 		// https://www.tecmint.com/check-linux-timezone/
-		//https://www.timeanddate.com/time/zone/uk/london
-		//https://www.timeanddate.com/time/change/uk/london
+		// https://www.timeanddate.com/time/zone/uk/london
+		// https://www.timeanddate.com/time/change/uk/london
 	}
 }
