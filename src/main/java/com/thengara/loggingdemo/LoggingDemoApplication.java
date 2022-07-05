@@ -11,7 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
+import lombok.extern.slf4j.Slf4j;
+
 @SpringBootApplication
+@Slf4j
 public class LoggingDemoApplication {
 	
 	Logger logger = LoggerFactory.getLogger(LoggingDemoApplication.class);
@@ -26,10 +29,8 @@ public class LoggingDemoApplication {
 	
 	@EventListener(ApplicationReadyEvent.class)
 	public void doSomethingAfterStartup() throws UnknownHostException {
-		logger.info("This is to inform that, application has been started");
-		logger.debug("This is to inform that, debug level has been enabled");
-
-		logger.info("http://"+InetAddress. getLocalHost().getHostName()+":"+serverPort+"/hello/");
+		log.info("This is to inform that, application has been started");
+		log.info("http://"+InetAddress. getLocalHost().getHostName()+":"+serverPort+"/hello/");
 	}
 
 }
